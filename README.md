@@ -27,8 +27,11 @@ Redmi Note 7, LineageOS 18.1, Android 11<br/>
 iPhone 11, iOS 14.7
 
 # Issue
-switch this app to background, bluetooth will disconnect, you need restart this app. fixed!
+switch this app to background, bluetooth will disconnect, you need restart this app. fixed!<br/>
 Specific target name?
+
+# Release
+see -->
 
 # Note
 Shift Del just send Shift, and Win Del just send Win.<br/>
