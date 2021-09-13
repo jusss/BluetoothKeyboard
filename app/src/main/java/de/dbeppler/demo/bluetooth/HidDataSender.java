@@ -20,6 +20,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.util.ArraySet;
+import android.util.Log;
 
 import androidx.annotation.MainThread;
 import androidx.annotation.WorkerThread;
@@ -170,9 +171,15 @@ public class HidDataSender
             waitingForDevice = device;
             connectedDevice = null;
 
+
             updateDeviceList();
 
+            Log.d("first check", "device is" + device);
+            Log.d("check first", "connectedDevice is" + connectedDevice);
+
             if (device != null && device.equals(connectedDevice)) {
+                Log.d("run it? first check", "device is" + device);
+                Log.d("run it ? check first", "connectedDevice is" + connectedDevice);
                 for (ProfileListener listener : listeners) {
                     listener.onDeviceStateChanged(device, BluetoothProfile.STATE_CONNECTED);
                 }
@@ -216,6 +223,14 @@ public class HidDataSender
                             // must be an incoming one. In that case, we shouldn't try to disconnect
                             // from it.
                             waitingForDevice = device;
+                        }
+
+                        else if (state == BluetoothProfile.STATE_DISCONNECTED) {
+                            // If we are disconnected from a device we are waiting to connect to, we
+                            // ran into a timeout and should no longer try to connect.
+                            if (device == waitingForDevice) {
+                                waitingForDevice = null;
+                            }
                         }
                         updateDeviceList();
                         for (ProfileListener listener : listeners) {

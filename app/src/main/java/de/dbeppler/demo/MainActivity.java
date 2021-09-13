@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 @MainThread
                 public void onAppUnregistered() {
                     Log.v(TAG, "app unregistered");
+                    // unregister once app switch to background
+                    hidDataSender.unregister(profileListener);
                 }
 
                 @Override
@@ -89,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
             for (BluetoothDevice device : BluetoothAdapter.getDefaultAdapter().getBondedDevices())
                 if (TARGET_DEVICE_NAME.equals(device.getName())) {
                     Log.d(TAG, "Requesting connection to " + device.getName());
+                    // register again when app switch back from background
+                    hidDataSender.register(getApplicationContext(), profileListener);
                     hidDataSender.requestConnect(device);
                 }
         }
@@ -112,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
             for (BluetoothDevice device : BluetoothAdapter.getDefaultAdapter().getBondedDevices())
                 if (TARGET_DEVICE_NAME.equals(device.getName())) {
                     Log.d(TAG, "Requesting connection to " + device.getName());
+                    // register again when app switch back from background
+                    hidDataSender.register(getApplicationContext(), profileListener);
                     hidDataSender.requestConnect(device);
                 }
         }
@@ -123,42 +129,13 @@ public class MainActivity extends AppCompatActivity {
         String string = b.getText().toString();
         if (hidDataSender.isConnected()) {
             Log.d(TAG, "Sending message: " + string);
-            if (keyboardHelper != null)
-            {
-//                Log.d(TAG,"string is " + string);
-                keyboardHelper.pressedModifier.add(string);
-//                for (String c: keyboardHelper.pressedModifier)
-//                    Log.d(TAG,"list is " + c);
-
-
-//                if (string.equals("Shift")) keyboardHelper.pressedModifier.add("Shift");
-//                if (string.equals("Shift")) keyboardHelper.pressedModifier.add(string);
-//
-//                if (string == "Ctrl") keyboardHelper.pressedModifier.add(string);
-//                if (string == "Alt") keyboardHelper.pressedModifier.add(string);
-//                if (string == "Win") keyboardHelper.pressedModifier.add(string);
-//                for (String c: keyboardHelper.pressedModifier)
-//                    Log.d(TAG,"list is " + c);
-            }
-//                switch (string){
-//                    case "Ctrl":
-//                        keyboardHelper.pressedModifier.add("Ctrl");
-//                        break;
-//                    case "Shift":
-//                        keyboardHelper.pressedModifier.add("Shift");
-//                        break;
-//                    case "Alt":
-//                        keyboardHelper.pressedModifier.add("Alt");
-//                        break;
-//                    case "Win":
-//                        keyboardHelper.pressedModifier.add("Win");
-//                        break;
-//                }
-
+            if (keyboardHelper != null) keyboardHelper.pressedModifier.add(string);
         } else {
             for (BluetoothDevice device : BluetoothAdapter.getDefaultAdapter().getBondedDevices())
                 if (TARGET_DEVICE_NAME.equals(device.getName())) {
                     Log.d(TAG, "Requesting connection to " + device.getName());
+                    // register again when app switch back from background
+                    hidDataSender.register(getApplicationContext(), profileListener);
                     hidDataSender.requestConnect(device);
                 }
         }
