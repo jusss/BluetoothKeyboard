@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothProfile;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -49,7 +50,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_keyboard);
+
+        Configuration config = getResources().getConfiguration();
+        Log.d("TAG", "width is " + config.screenWidthDp);
+        Log.d("TAG", "height is " + config.screenHeightDp);
+        if (config.screenWidthDp >= 720) {
+            setContentView(R.layout.activity_keyboard);
+        } else {
+            setContentView(R.layout.activity_keyboard2);
+        }
+
+        //redmi note 7, 2340 x 1080, 409 ppi   w860 h371
+        //redmi 2, 1280 x 720, 312 ppi   w640 h336
+
 
         hidDataSender = HidDataSender.getInstance();
         hidDataSender.register(getApplicationContext(), profileListener);
