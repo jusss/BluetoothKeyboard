@@ -18,7 +18,7 @@ import de.dbeppler.demo.input.KeyboardHelper;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "BluetoothHidDemo";
-    private static final String TARGET_DEVICE_NAME = "IPC6308"; // insert target device here
+//    private static final String TARGET_DEVICE_NAME = "IPC6308"; // insert target device here
 
     private HidDataSender hidDataSender;
     private KeyboardHelper keyboardHelper;
@@ -81,10 +81,10 @@ public class MainActivity extends AppCompatActivity {
             sendString(message);
         } else {
             for (BluetoothDevice device : BluetoothAdapter.getDefaultAdapter().getBondedDevices())
-                if (TARGET_DEVICE_NAME.equals(device.getName())) {
-                    Log.d(TAG, "Requesting connection to " + device.getName());
+//                if (TARGET_DEVICE_NAME.equals(device.getName())) {
+//                    Log.d(TAG, "Requesting connection to " + device.getName());
                     hidDataSender.requestConnect(device);
-                }
+//                }
         }
     }
 
@@ -102,12 +102,16 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             for (BluetoothDevice device : BluetoothAdapter.getDefaultAdapter().getBondedDevices())
-                if (TARGET_DEVICE_NAME.equals(device.getName())) {
-                    Log.d(TAG, "Requesting connection to " + device.getName());
-                    // register again when app switch back from background
-                    hidDataSender.register(getApplicationContext(), profileListener);
-                    hidDataSender.requestConnect(device);
-                }
+//                if (TARGET_DEVICE_NAME.equals(device.getName())) {
+//                    Log.d(TAG, "Requesting connection to " + device.getName());
+//                    // register again when app switch back from background
+//                    hidDataSender.register(getApplicationContext(), profileListener);
+//                    hidDataSender.requestConnect(device);
+//                }
+            {
+                hidDataSender.register(getApplicationContext(), profileListener);
+                hidDataSender.requestConnect(device);
+            }
         }
     }
 
@@ -127,12 +131,16 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             for (BluetoothDevice device : BluetoothAdapter.getDefaultAdapter().getBondedDevices())
-                if (TARGET_DEVICE_NAME.equals(device.getName())) {
-                    Log.d(TAG, "Requesting connection to " + device.getName());
-                    // register again when app switch back from background
-                    hidDataSender.register(getApplicationContext(), profileListener);
-                    hidDataSender.requestConnect(device);
-                }
+//                if (TARGET_DEVICE_NAME.equals(device.getName())) {
+//                    Log.d(TAG, "Requesting connection to " + device.getName());
+//                    // register again when app switch back from background
+//                    hidDataSender.register(getApplicationContext(), profileListener);
+//                    hidDataSender.requestConnect(device);
+//                }
+            {
+                hidDataSender.register(getApplicationContext(), profileListener);
+                hidDataSender.requestConnect(device);
+            }
         }
     }
 
@@ -145,12 +153,16 @@ public class MainActivity extends AppCompatActivity {
             if (keyboardHelper != null) keyboardHelper.pressedModifier.add(string);
         } else {
             for (BluetoothDevice device : BluetoothAdapter.getDefaultAdapter().getBondedDevices())
-                if (TARGET_DEVICE_NAME.equals(device.getName())) {
-                    Log.d(TAG, "Requesting connection to " + device.getName());
-                    // register again when app switch back from background
-                    hidDataSender.register(getApplicationContext(), profileListener);
-                    hidDataSender.requestConnect(device);
-                }
+//                if (TARGET_DEVICE_NAME.equals(device.getName())) {
+//                    Log.d(TAG, "Requesting connection to " + device.getName());
+//                    // register again when app switch back from background
+//                    hidDataSender.register(getApplicationContext(), profileListener);
+//                    hidDataSender.requestConnect(device);
+//                }
+            {
+                hidDataSender.register(getApplicationContext(), profileListener);
+                hidDataSender.requestConnect(device);
+            }
         }
     }
 

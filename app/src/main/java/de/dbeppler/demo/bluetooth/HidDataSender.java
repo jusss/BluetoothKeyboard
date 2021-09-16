@@ -171,15 +171,13 @@ public class HidDataSender
             waitingForDevice = device;
             connectedDevice = null;
 
-
             updateDeviceList();
 
-            Log.d("first check", "device is" + device);
-            Log.d("check first", "connectedDevice is" + connectedDevice);
+            Log.d("TAG", "Requesting connection to " + device.getName());
 
             if (device != null && device.equals(connectedDevice)) {
-                Log.d("run it? first check", "device is" + device);
-                Log.d("run it ? check first", "connectedDevice is" + connectedDevice);
+                Log.d("TAG", "device is " + device.getName());
+                Log.d("TAG", "connectedDevice is " + connectedDevice.getName());
                 for (ProfileListener listener : listeners) {
                     listener.onDeviceStateChanged(device, BluetoothProfile.STATE_CONNECTED);
                 }
