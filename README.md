@@ -8,20 +8,14 @@ Use An Android Device As A Bluetooth Keyboard
 https://github.com/ginkage/wearmouse<br/>
 https://github.com/domi1294/BluetoothHidDemo
 
-# Bluetooth Name
-Specific Name for auto reconnect: IPC6308
-
-# How to use
-1. iPhone Rename as IPC6308<br/>
-2. Android kill BluetoothHidDemo APP<br/>
-3. iPhone connect to Android via Bluetooth<br/>
-4. open BluetoothHidDemo APP on Android<br/>
-5. iPhone click an area which can input, then press any key on Android
+# How to Use
+1. iPhone connect to Android via Bluetooth<br/>
+2. open BluetoothHidDemo APP on Android<br/>
+3. iPhone click an area which can input, then press any key on this APP
 
 # Requirement
 Android Pie 9, API 28<br/>
 Bluetooth HID Profile Enabled
-
 
 # Test Device 
 Redmi Note 7, LineageOS 18.1, Android 11, lineage-18.1-20210525-nightly-lavender-signed.zip<br/>
@@ -33,12 +27,13 @@ if not, then kill the app and turn bluetooth down on Android, then turn bluetoot
 
 # Issue
 switch this app to background, bluetooth will disconnect, you need restart this app. fixed!<br/>
-Specific target name?<br/>
+different layout for different screen size? fixed!<br/>
+Specific target name? fixed!<br/>
 Tab-A? for iOS<br/>
 C-S? for Windows<br/>
 
 # Release
-see -->
+see --> github release
 
 # Note
 Shift Del just send Shift, and Win Del just send Win.<br/>
