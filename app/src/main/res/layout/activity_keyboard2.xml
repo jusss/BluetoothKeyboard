@@ -8,11 +8,11 @@ android:layout_height="match_parent">
         android:id="@+id/line6"
         android:layout_above="@+id/line5"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="60dp">
 
         <Button
             android:id="@+id/esc"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
             android:text="Esc"
             android:onClick="sendSpecialChar"
@@ -20,9 +20,9 @@ android:layout_height="match_parent">
             />
         <Button
             android:id="@+id/backquote"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="`"
+            android:text="`   ~"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/esc"
             android:textAllCaps="false"
@@ -30,9 +30,9 @@ android:layout_height="match_parent">
 
         <Button
             android:id="@+id/char_slash"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="/"
+            android:text="/   ?"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/backquote"
             android:textAllCaps="false"
@@ -40,16 +40,16 @@ android:layout_height="match_parent">
 
         <Button
             android:id="@+id/semicolon"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text=";"
+            android:text=";   :"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_slash"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/single_quote"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
             android:text="'"
             android:onClick="sendChar"
@@ -58,64 +58,56 @@ android:layout_height="match_parent">
             />
         <Button
             android:id="@+id/left_square"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="["
+            android:text="[   {"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/single_quote"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/right_square"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="]"
+            android:text="]   }"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/left_square"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/back_slach"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="\\"
+            android:text="\\   |"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/right_square"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/hyphen"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="-"
+            android:text="-   _"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/back_slach"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/equal"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="="
+            android:text="=   +"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/hyphen"
             android:textAllCaps="false"
             />
+
         <Button
-            android:id="@+id/char_period"
-            android:layout_width="50dp"
+            android:id="@+id/back"
+            android:layout_width="111dp"
             android:layout_height="match_parent"
-            android:text="."
-            android:onClick="sendChar"
-            android:layout_toRightOf="@+id/equal"
-            android:textAllCaps="false"
-            />
-        <Button
-            android:id="@+id/question"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:text="\?"
-            android:onClick="sendChar"
+            android:text="Back"
+            android:onClick="sendSpecialChar"
             android:layout_alignParentRight="true"
             android:textAllCaps="false"
             />
@@ -124,84 +116,84 @@ android:layout_height="match_parent">
         android:id="@+id/line5"
         android:layout_above="@+id/line4"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="60dp">
 
         <Button
             android:id="@+id/char_1"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="1"
+            android:text="1   !"
             android:onClick="sendChar"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_2"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="2"
+            android:text="2  @"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_1"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_3"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="3"
+            android:text="3   #"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_2"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_4"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="4"
+            android:text="4   $"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_3"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_5"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="5"
+            android:text="5   %"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_4"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_6"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="6"
+            android:text="6   ^"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_5"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_7"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="7"
+            android:text="7   &amp;"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_6"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_8"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="8"
+            android:text="8   *"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_7"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_9"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="9"
+            android:text="9   ("
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_8"
             android:textAllCaps="false"
@@ -209,21 +201,30 @@ android:layout_height="match_parent">
 
         <Button
             android:id="@+id/char_0"
-            android:layout_width="50dp"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="0"
+            android:text="0   )"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_9"
             android:textAllCaps="false"
             />
 
         <Button
-            android:id="@+id/back"
-            android:layout_width="140dp"
+            android:id="@+id/char_period"
+            android:layout_width="53dp"
             android:layout_height="match_parent"
-            android:text="Back"
-            android:onClick="sendSpecialChar"
-            android:layout_alignParentRight="true"
+            android:text=".   &gt;"
+            android:onClick="sendChar"
+            android:layout_toRightOf="@+id/char_0"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/question"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:text="\?"
+            android:onClick="sendChar"
+            android:layout_toRightOf="@+id/char_period"
             android:textAllCaps="false"
             />
     </RelativeLayout>
@@ -334,7 +335,7 @@ android:layout_height="match_parent">
 
         <Button
             android:id="@+id/tab"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             android:text="Tab"
             android:onClick="sendSpecialChar"
@@ -343,7 +344,7 @@ android:layout_height="match_parent">
 
         <Button
             android:id="@+id/char_a"
-            android:layout_width="70dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             android:text="a"
             android:onClick="sendChar"
@@ -352,7 +353,7 @@ android:layout_height="match_parent">
             />
         <Button
             android:id="@+id/char_s"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             android:text="s"
             android:onClick="sendChar"
@@ -424,14 +425,16 @@ android:layout_height="match_parent">
             />
 
         <Button
-            android:id="@+id/left_parentheses"
+            android:id="@+id/up"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:text="("
-            android:onClick="sendChar"
+            android:text="Up"
+            android:onClick="sendSpecialChar"
             android:layout_toRightOf="@+id/char_l"
             android:textAllCaps="false"
             />
+
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -512,37 +515,40 @@ android:layout_height="match_parent">
             android:textAllCaps="false"
             />
 
+
         <Button
-            android:id="@+id/less"
+            android:id="@+id/left"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:text="&lt;"
-            android:onClick="sendChar"
+            android:text="Left"
+            android:onClick="sendSpecialChar"
             android:layout_toRightOf="@+id/char_m"
             android:textAllCaps="false"
             />
+
+
         <Button
-            android:id="@+id/more"
+            android:id="@+id/right"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:text="&gt;"
-            android:onClick="sendChar"
-            android:layout_toRightOf="@+id/less"
+            android:text="Right"
+            android:onClick="sendSpecialChar"
+            android:layout_toRightOf="@+id/left"
             android:textAllCaps="false"
             />
 
         <Button
-            android:id="@+id/right_parentheses"
+            android:id="@+id/down"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:text=")"
-            android:onClick="sendChar"
-            android:layout_toRightOf="@+id/more"
+            android:text="Down"
+            android:onClick="sendSpecialChar"
+            android:layout_toRightOf="@+id/right"
             android:textAllCaps="false"
             />
     </RelativeLayout>
 
-        <RelativeLayout
+    <RelativeLayout
             android:id="@+id/line1"
             android:layout_alignParentBottom ="true"
             android:layout_width="match_parent"
@@ -591,7 +597,7 @@ android:layout_height="match_parent">
                 android:id="@+id/char_comma"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:text=","
+                android:text=",   &lt;"
                 android:onClick="sendChar"
                 android:layout_toRightOf="@+id/space"
                 android:textAllCaps="false"

@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         Configuration config = getResources().getConfiguration();
         Log.d("TAG", "width is " + config.screenWidthDp);
         Log.d("TAG", "height is " + config.screenHeightDp);
@@ -176,5 +180,13 @@ public class MainActivity extends AppCompatActivity {
                             for (char c : string.toCharArray())
                                 keyboardHelper.sendChar(c);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
