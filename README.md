@@ -33,7 +33,7 @@ C-S? for Windows<br/>
 see --> github release
 
 # Note
-Shift Del just send Shift, and Win Del just send Win.<br/>
+Shift Del just send Shift, and Win Del just send Win. iOS use Ctrl-Space to switch English/Chinese in default input method, Android use Shift-Space to switch English/Chinese in Google Pinyin.<br/>
 it uses scan code, not key code,<br/>
 for example, Delete 76, Backspace 42, Ctrl 224<br/>
 check it on https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf<br/>
