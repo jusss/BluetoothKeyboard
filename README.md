@@ -9,9 +9,9 @@ https://github.com/ginkage/wearmouse<br/>
 https://github.com/domi1294/BluetoothHidDemo
 
 # How to Use
-1. iPhone connect to Android via Bluetooth<br/>
-2. open BluetoothHidDemo APP on Android<br/>
-3. iPhone click an area which can input, then press any key on this APP
+1. connect iPhone to Android via Bluetooth<br/>
+2. open this app on Android, choose iPhone on paired device<br/>
+3. iPhone click an area where can input, then press any key on this app
 
 # Requirement
 Android Pie 9, API 28<br/>
@@ -39,4 +39,4 @@ for example, Delete 76, Backspace 42, Ctrl 224<br/>
 check it on https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf<br/>
 
 there's a bluetooth connect issue in latest LineageOS ROM for Redmi 2, but the old one is fine.<br/>
-if bluetooth keep disconnect, reboot the Android device, or forget the device from both side, then pair again.
+if bluetooth keep disconnect, reboot the Android device, or forget paired device from both side, then pair again.

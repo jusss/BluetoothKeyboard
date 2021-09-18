@@ -3,7 +3,8 @@
     package="de.dbeppler.demo">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -12,16 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity"
-            android:screenOrientation="landscape"
-            >
+        <activity android:name=".KeyboardActivity"
+            android:screenOrientation="landscape">
+            ></activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <service android:name=".YourService"/>-->
     </application>
 
 </manifest>
