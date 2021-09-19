@@ -12,6 +12,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -51,6 +52,22 @@ public class KeyboardActivity extends AppCompatActivity {
                     Log.v(TAG, "service state changed to" + proxy.toString());
                 }
             };
+
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK){
+//           moveTaskToBack(false);
+//           return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
+
+    // press back button return home
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+//        super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
