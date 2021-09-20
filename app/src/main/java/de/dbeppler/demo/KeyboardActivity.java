@@ -84,9 +84,9 @@ public class KeyboardActivity extends AppCompatActivity {
         Log.d("TAG", "width is " + config.screenWidthDp);
         Log.d("TAG", "height is " + config.screenHeightDp);
         if (config.screenWidthDp >= 720) {
-            setContentView(R.layout.activity_keyboard);
+            setContentView(R.layout.activity_keyboard_rn7);
         } else {
-            setContentView(R.layout.activity_keyboard3);
+            setContentView(R.layout.activity_keyboard_r2);
         }
 
         //redmi note 7, 2340 x 1080, 409 ppi   w860 h371

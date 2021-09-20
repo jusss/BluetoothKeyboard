@@ -14,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".KeyboardActivity"
-            android:screenOrientation="landscape">
-            ></activity>
+            >
+            </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
