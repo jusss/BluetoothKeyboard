@@ -16,6 +16,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 import de.dbeppler.demo.bluetooth.HidDataSender;
 import de.dbeppler.demo.bluetooth.HidDeviceProfile;
 import de.dbeppler.demo.input.KeyboardHelper;
@@ -74,26 +76,35 @@ public class KeyboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Intent intent =getIntent();
-        TARGET_DEVICE_NAME  = intent.getStringExtra("name");
+        ArrayList<String> name = (ArrayList<String>) intent.getSerializableExtra("name");
+
+        TARGET_DEVICE_NAME  = name.get(0);
+        String screenSize = name.get(1);
 
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        Configuration config = getResources().getConfiguration();
-        Log.d("TAG", "width is " + config.screenWidthDp);
-        Log.d("TAG", "height is " + config.screenHeightDp);
-        if (config.screenWidthDp >= 720) {
-            setContentView(R.layout.activity_keyboard_rn7);
-        } else {
-            setContentView(R.layout.activity_keyboard_r2);
-        }
+//        Configuration config = getResources().getConfiguration();
+//        Log.d("TAG", "width is " + config.screenWidthDp);
+//        Log.d("TAG", "height is " + config.screenHeightDp);
+//        if (config.screenWidthDp >= 720) {
+//            setContentView(R.layout.activity_keyboard_rn7);
+//        } else {
+//            setContentView(R.layout.activity_keyboard_r2);
+//        }
 
         //redmi note 7, 2340 x 1080, 409 ppi   w860 h371
         //redmi 2, 1280 x 720, 312 ppi   w640 h336
 
 //        SharedPreferences userInfo = getSharedPreferences("LatestConnectedBluetooth", MODE_PRIVATE);
 //        SharedPreferences.Editor editor = userInfo.edit();
+
+        if (screenSize.equals("1280x720"))
+            setContentView(R.layout.activity_keyboard_r2);
+
+        if (screenSize.equals("2340x1080"))
+            setContentView(R.layout.activity_keyboard_rn7);
 
         hidDataSender = HidDataSender.getInstance();
 
