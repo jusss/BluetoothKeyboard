@@ -101,10 +101,10 @@ public class KeyboardActivity extends AppCompatActivity {
 //        SharedPreferences.Editor editor = userInfo.edit();
 
         if (screenSize.equals("1280x720"))
-            setContentView(R.layout.activity_keyboard_r2);
+            setContentView(R.layout.activity_keyboard_1280x720);
 
         if (screenSize.equals("2340x1080"))
-            setContentView(R.layout.activity_keyboard_rn7);
+            setContentView(R.layout.activity_keyboard_2340x1080);
 
         hidDataSender = HidDataSender.getInstance();
 
