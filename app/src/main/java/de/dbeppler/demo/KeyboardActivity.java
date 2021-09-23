@@ -106,6 +106,9 @@ public class KeyboardActivity extends AppCompatActivity {
         if (screenSize.equals("2340x1080"))
             setContentView(R.layout.activity_keyboard_2340x1080);
 
+        if (screenSize.equals("1280x720_large"))
+            setContentView(R.layout.activity_keyboard_1280x720_large);
+
         hidDataSender = HidDataSender.getInstance();
 
         HidDeviceProfile hidDeviceProfile = hidDataSender.register(getApplicationContext(), profileListener);

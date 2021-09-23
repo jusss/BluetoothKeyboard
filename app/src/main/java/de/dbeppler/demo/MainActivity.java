@@ -42,17 +42,20 @@ public class MainActivity extends AppCompatActivity {
             ll.addView(buttons.get(buttons.size() - 1));
         }
 
-
-
         LinearLayout ls = (LinearLayout)findViewById(R.id.choose_size);
+
         CheckBox size1 = new CheckBox(this);
         size1.setText("1280x720");
 
         CheckBox size2 = new CheckBox(this);
         size2.setText("2340x1080");
 
+        CheckBox size3 = new CheckBox(this);
+        size3.setText("1280x720 large");
+
         ls.addView(size1);
         ls.addView(size2);
+        ls.addView(size3);
 
         size1.setChecked(true);
 
@@ -61,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 size1.setChecked(true);
                 size2.setChecked(false);
+                size3.setChecked(false);
                 screenSize = "1280x720";
             }
         });
@@ -71,9 +75,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 size1.setChecked(false);
                 size2.setChecked(true);
+                size3.setChecked(false);
                 screenSize = "2340x1080";
             }
         });
 
+        size3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                size1.setChecked(false);
+                size2.setChecked(false);
+                size3.setChecked(true);
+                screenSize = "1280x720_large";
+            }
+        });
     }
 }
