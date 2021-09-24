@@ -11,8 +11,10 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -27,6 +29,9 @@ public class KeyboardActivity extends AppCompatActivity {
     private static final String TAG = "BluetoothHidDemo";
 //    private static final String TARGET_DEVICE_NAME = "IPC6308"; // insert target device here
     private static String TARGET_DEVICE_NAME = null;
+    private Boolean repeat = false;
+    Handler handler;
+    Runnable runRepeat;
 
     private HidDataSender hidDataSender;
     private KeyboardHelper keyboardHelper;
@@ -116,6 +121,30 @@ public class KeyboardActivity extends AppCompatActivity {
         keyboardHelper = new KeyboardHelper(hidDataSender);
 
 //        hidDeviceProfile.getConnectedDevices();
+
+//  repeat send backspace when hold Back key
+        findViewById(R.id.back).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                int event = motionEvent.getAction();
+                if (event == MotionEvent.ACTION_DOWN){
+                    handler = new Handler();
+                    runRepeat = new Runnable(){
+                        @Override
+                        public void run() {
+                                sendSpecialChar(view);
+                                handler.postDelayed(this,200);
+                        }
+                    };
+                    handler.post(runRepeat);
+                }
+
+                if (event == MotionEvent.ACTION_UP){
+                    handler.removeCallbacks(runRepeat);
+                }
+                return true;
+            }
+        });
 
     }
 
