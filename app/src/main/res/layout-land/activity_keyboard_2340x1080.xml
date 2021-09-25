@@ -259,7 +259,6 @@ android:layout_height="match_parent">
             android:layout_width="120dp"
             android:layout_height="match_parent"
             android:text="Back"
-            android:onClick="sendSpecialChar"
             android:layout_alignParentRight="true"
             android:textAllCaps="false"
             />

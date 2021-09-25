@@ -558,7 +558,6 @@ android:layout_height="match_parent">
             android:layout_width="51dp"
             android:layout_height="match_parent"
             android:text="Back"
-            android:onClick="sendSpecialChar"
             android:layout_toRightOf="@+id/char_m"
             android:textAllCaps="false"
             />

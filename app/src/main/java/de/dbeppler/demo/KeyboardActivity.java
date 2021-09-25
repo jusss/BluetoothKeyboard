@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.widget.Button;
 
@@ -133,7 +134,8 @@ public class KeyboardActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                                 sendSpecialChar(view);
-                                handler.postDelayed(this,200);
+                                view.playSoundEffect(SoundEffectConstants.CLICK);
+                                handler.postDelayed(this,100);
                         }
                     };
                     handler.post(runRepeat);
@@ -147,6 +149,60 @@ public class KeyboardActivity extends AppCompatActivity {
         });
 
     }
+
+    // this would lag in quick input
+    public void longClickChar(View view) {
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                int event = motionEvent.getAction();
+                if (event == MotionEvent.ACTION_DOWN){
+                    handler = new Handler();
+                    runRepeat = new Runnable(){
+                        @Override
+                        public void run() {
+                            sendChar(view);
+                            view.playSoundEffect(SoundEffectConstants.CLICK);
+                            handler.postDelayed(this,200);
+                        }
+                    };
+                    handler.post(runRepeat);
+                }
+
+                if (event == MotionEvent.ACTION_UP){
+                    handler.removeCallbacks(runRepeat);
+                }
+                return true;
+            }
+        });
+    }
+
+    public void longClickSpecialChar(View view) {
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                int event = motionEvent.getAction();
+                if (event == MotionEvent.ACTION_DOWN){
+                    handler = new Handler();
+                    runRepeat = new Runnable(){
+                        @Override
+                        public void run() {
+                            sendSpecialChar(view);
+                            view.playSoundEffect(SoundEffectConstants.CLICK);
+                            handler.postDelayed(this,200);
+                        }
+                    };
+                    handler.post(runRepeat);
+                }
+
+                if (event == MotionEvent.ACTION_UP){
+                    handler.removeCallbacks(runRepeat);
+                }
+                return true;
+            }
+        });
+    }
+
 
     public void sendMessage(View view) {
 //        String message = "TestMessage";
@@ -242,8 +298,6 @@ public class KeyboardActivity extends AppCompatActivity {
 //            }
         }
     }
-
-
 
     /*
      * helper method to send multiple characters

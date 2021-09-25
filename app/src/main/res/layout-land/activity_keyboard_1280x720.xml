@@ -227,93 +227,111 @@ android:layout_height="match_parent">
 
         <Button
             android:id="@+id/char_q"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="q"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="36dp"
             android:onClick="sendChar"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_w"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="w"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_q"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_e"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="e"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_w"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_r"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="r"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_e"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_t"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="t"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_r"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_y"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="y"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_t"
+            android:layout_marginLeft="16dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_u"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="u"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_y"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_i"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="i"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_u"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_o"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="o"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_i"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
             android:id="@+id/char_p"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:text="p"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_o"
+            android:layout_marginLeft="6dp"
+            android:textAllCaps="false"
+            />
+        <Button
+            android:id="@+id/up"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:text="Up"
+            android:onClick="sendSpecialChar"
+            android:layout_alignParentRight="true"
             android:textAllCaps="false"
             />
     </RelativeLayout>
@@ -326,7 +344,7 @@ android:layout_height="match_parent">
 
         <Button
             android:id="@+id/tab"
-            android:layout_width="80dp"
+            android:layout_width="69dp"
             android:layout_height="match_parent"
             android:text="Tab"
             android:onClick="sendSpecialChar"
@@ -349,6 +367,7 @@ android:layout_height="match_parent">
             android:text="s"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_a"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
@@ -358,6 +377,7 @@ android:layout_height="match_parent">
             android:text="d"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_s"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
@@ -367,6 +387,7 @@ android:layout_height="match_parent">
             android:text="f"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_d"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
@@ -376,6 +397,7 @@ android:layout_height="match_parent">
             android:text="g"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_f"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
@@ -384,7 +406,7 @@ android:layout_height="match_parent">
             android:layout_height="match_parent"
             android:text="h"
             android:onClick="sendChar"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/char_g"
             android:textAllCaps="false"
             />
@@ -395,6 +417,7 @@ android:layout_height="match_parent">
             android:text="j"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_h"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
@@ -404,6 +427,7 @@ android:layout_height="match_parent">
             android:text="k"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_j"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
@@ -413,14 +437,15 @@ android:layout_height="match_parent">
             android:text="l"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_k"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
 
         <Button
-            android:id="@+id/up"
+            android:id="@+id/down"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:text="Up"
+            android:text="Down"
             android:onClick="sendSpecialChar"
             android:layout_alignParentRight="true"
             android:textAllCaps="false"
@@ -459,6 +484,7 @@ android:layout_height="match_parent">
             android:text="x"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_z"
+            android:layout_marginLeft="3dp"
             android:textAllCaps="false"
             />
         <Button
@@ -468,6 +494,7 @@ android:layout_height="match_parent">
             android:text="c"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_x"
+            android:layout_marginLeft="3dp"
             android:textAllCaps="false"
             />
         <Button
@@ -477,6 +504,7 @@ android:layout_height="match_parent">
             android:text="v"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_c"
+            android:layout_marginLeft="3dp"
             android:textAllCaps="false"
             />
         <Button
@@ -486,7 +514,7 @@ android:layout_height="match_parent">
             android:text="b"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_v"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="36dp"
             android:textAllCaps="false"
             />
         <Button
@@ -496,6 +524,7 @@ android:layout_height="match_parent">
             android:text="n"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_b"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
         <Button
@@ -505,6 +534,7 @@ android:layout_height="match_parent">
             android:text="m"
             android:onClick="sendChar"
             android:layout_toRightOf="@+id/char_n"
+            android:layout_marginLeft="6dp"
             android:textAllCaps="false"
             />
 
@@ -514,7 +544,7 @@ android:layout_height="match_parent">
             android:layout_height="match_parent"
             android:text=",   &lt;"
             android:onClick="sendChar"
-            android:layout_toRightOf="@+id/char_m"
+            android:layout_toLeftOf="@+id/left"
             android:layout_marginLeft="16dp"
             android:textAllCaps="false"
             />
@@ -524,19 +554,10 @@ android:layout_height="match_parent">
             android:layout_height="match_parent"
             android:text="Left"
             android:onClick="sendSpecialChar"
-            android:layout_toRightOf="@+id/char_comma"
+            android:layout_toLeftOf="@+id/right"
             android:textAllCaps="false"
             />
 
-        <Button
-            android:id="@+id/down"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:text="Down"
-            android:onClick="sendSpecialChar"
-            android:layout_toRightOf="@+id/left"
-            android:textAllCaps="false"
-            />
         <Button
             android:id="@+id/right"
             android:layout_width="40dp"
